@@ -1,5 +1,6 @@
 version: 2.1
 jobs:
+ circleci-project-setup
   test:
     docker:
       - image: cimg/base:stable
@@ -70,3 +71,15 @@ workflows:
             - LangSmith-one
 orbs:
   evals: circleci/evals@1.0
+
+  build:
+    docker:
+      - image: cimg/base:current
+    resource_class: kakusync/aio-ai-seo-platform
+    steps:
+      - run: echo "Hi I'm on a Container Runner!"
+workflows:
+  build-workflow:
+    jobs:
+      - build
+ 
