@@ -1,0 +1,72 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Run tests
+          command: echo 'replace me with real tests!' && false
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Build an artifact
+          command: touch example.txt
+      - store_artifacts:
+          path: example.txt
+  deploy:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: deploy
+          command: "#e.g. ./deploy.sh"
+  eval-default-python:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: |
+            
+            pip install --user pipenv
+            pip install -r requirements.txt
+      - evals/eval:
+          circle_pipeline_id: << pipeline.id >>
+          cmd: python evals.py
+workflows:
+  example:
+    jobs:
+      - test:
+          context:
+            - Gemini-one
+            - Qdrant-one
+            - LangSmith-one
+      - build:
+          requires:
+            - test
+          context:
+            - Gemini-one
+            - Qdrant-one
+            - LangSmith-one
+      - deploy:
+          requires:
+            - test
+          context:
+            - Gemini-one
+            - Qdrant-one
+            - LangSmith-one
+  evals:
+    jobs:
+      - eval-default-python:
+          context:
+            - Gemini-one
+            - Qdrant-one
+            - LangSmith-one
+orbs:
+  evals: circleci/evals@1.0
