@@ -1,0 +1,3 @@
+files:
+  - source: crowdin/crowdin.yml
+    translation: crowdin/crowdin.yml
