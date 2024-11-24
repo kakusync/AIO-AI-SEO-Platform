@@ -1,4 +1,4 @@
-### Overview of the AIO AI SEO Platform
+# Overview of the AIO AI SEO Platform
 
 ***The AIO AI SEO platform offers a comprehensive solution for managing content, SEO, and social media activities***. It achieves this through the integration of multiple **AI personas**, each with distinct capabilities, which automate and streamline various tasks. This results in enhanced productivity and overall performance.
 
@@ -10,6 +10,19 @@
 
 - The platform is designed to be **scalable and reliable**, ensuring efficient operation even in high-traffic or high-load environments. This software project is intended for **personal use only**, as a tool for the individual creator.
 
+## The personas
+
+        - The Chief Workflow Coordinator
+		    - Content Creator
+        - Content Writer
+        - SEO Strategist
+        - Social Media Manager
+        - Email Marketer
+        - Data Analyst
+        - Graphic Designer
+        - Video Editor
+        - Image Editor
+---
 ## Social Media Integration
 
 - Facebook
