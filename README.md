@@ -13,7 +13,7 @@
 ## The personas
 
         - The Chief Workflow Coordinator
-	- Content Creator
+	 - Content Creator
         - Content Writer
         - SEO Strategist
         - Social Media Manager
